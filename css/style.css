@@ -1,0 +1,120 @@
+/* Add some margin to the page and set a default font and colour */
+
+body {
+  margin: 30px;
+  font-family: "Georgia", serif;
+  line-height: 1.8em;
+  color: #333;
+  -moz-user-select: none;
+  -webkit-user-select: none;
+  user-select: none;
+}
+
+/* Give headings their own font */
+
+h1,
+h2,
+h3,
+h4 {
+  font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
+}
+
+/* Slots for final card positions */
+
+#cardSlots {
+  background: navy;
+  flex-wrap: wrap;
+}
+
+/* The initial pile of unsorted cards */
+
+#cardPile {
+  background: green;
+}
+
+#cardSlots,
+#cardPile,
+#scoreBoard {
+  display: flex;
+  padding: 0.85em;
+  border: 2px solid #333;
+  -moz-border-radius: 10px;
+  -webkit-border-radius: 10px;
+  border-radius: 10px;
+  -moz-box-shadow: 0 0 0.3em rgba(0, 0, 0, 0.8);
+  -webkit-box-shadow: 0 0 0.3em rgba(0, 0, 0, 0.8);
+  box-shadow: 0 0 0.3em rgba(0, 0, 0, 0.8);
+}
+
+/* Individual cards and slots */
+
+#cardSlots div,
+#cardPile div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 10px;
+  padding: 0.5em;
+  border: 2px solid #333;
+  -moz-border-radius: 10px;
+  -webkit-border-radius: 10px;
+  border-radius: 10px;
+  margin: 5px 10px;
+  background: #fff;
+}
+
+/*#cardSlots div:first-child, #cardPile div:first-child {
+  margin-left: 0;
+}*/
+
+#cardSlots div.hovered {
+  background: #aaa;
+}
+
+#cardSlots div {
+  border-style: dashed;
+}
+
+#cardPile div {
+  background: #666;
+  color: #fff;
+  font-size: 1em;
+  text-shadow: 0 0 3px #000;
+  text-align: center;
+}
+
+#cardPile div.ui-draggable-dragging {
+  -moz-box-shadow: 0 0 0.5em rgba(0, 0, 0, 0.8);
+  -webkit-box-shadow: 0 0 0.5em rgba(0, 0, 0, 0.8);
+  box-shadow: 0 0 0.5em rgba(0, 0, 0, 0.8);
+}
+
+/* "You did it!" message */
+#successMessage {
+  position: absolute;
+  left: 580px;
+  top: 250px;
+  width: 0;
+  height: 0;
+  z-index: 100;
+  background: #dfd;
+  border: 2px solid #333;
+  -moz-border-radius: 10px;
+  -webkit-border-radius: 10px;
+  border-radius: 10px;
+  -moz-box-shadow: 0.3em 0.3em 0.5em rgba(0, 0, 0, 0.8);
+  -webkit-box-shadow: 0.3em 0.3em 0.5em rgba(0, 0, 0, 0.8);
+  box-shadow: 0.3em 0.3em 0.5em rgba(0, 0, 0, 0.8);
+  padding: 20px;
+}
+
+#scoreBoard h4 {
+  text-transform: uppercase;
+  font-size: 2rem;
+}
+
+#scoreBoard p {
+  text-transform: uppercase;
+  font-size: 1.5rem;
+}
+
