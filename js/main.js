@@ -89,12 +89,6 @@ $(init);
 function init() {
   // Hide the success message
   $("#successMessage").hide();
-  // $("#successMessage").css({
-  //   left: "580px",
-  //   top: "250px",
-  //   width: 0,
-  //   height: 0,
-  // });
 
   // Reset the game
   correctCards = 0;
@@ -151,19 +145,15 @@ function handleCardDrop(event, ui) {
   let cardMedicineName = ui.draggable.data("medicine");
 
   // If the card was dropped to the correct slot,
-  // change the card colour, position it directly
-  // on top of the slot, and prevent it being dragged
+  // hide the slot and disable it 
+  // then revert the card back to its original position
   // again
 
   if (slotMedicineName == cardMedicineName) {
-    // ui.draggable.addClass( 'correct' );
-    // ui.draggable.draggable( 'disable' );
     $(this).droppable("disable");
     $(this).animate({ opacity: 0 }, 500);
     let medicineScore = Number($(`#${cardMedicineName}Score .points`).html());
     $(`#${cardMedicineName}Score .points`).html(medicineScore + 1);
-    // ui.draggable.position( { of: $(this), my: 'left top', at: 'left top' } );
-    // ui.draggable.draggable( 'option', 'revert', false );
     correctCards++;
   }
 
@@ -174,6 +164,6 @@ function handleCardDrop(event, ui) {
     $("#successMessage").show();
     $("#successMessage").animate({
       opacity: 1,
-    });
+    },500);
   }
 }

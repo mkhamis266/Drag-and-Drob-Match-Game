@@ -1,10 +1,10 @@
-/* Add some margin to the page and set a default font and colour */
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
 
 body {
   margin: 30px;
-  font-family: "Georgia", serif;
-  line-height: 1.8em;
-  color: #333;
+  font-family: 'Press Start 2P', cursive;
+  line-height: 1.5em;
+  color: #fff;
   -moz-user-select: none;
   -webkit-user-select: none;
   user-select: none;
@@ -76,7 +76,6 @@ body {
 
 #cardPile .content div {
   background: #666;
-  color: #fff;
   font-size: 1em;
   text-shadow: 0 0 3px #000;
   text-align: center;
@@ -99,20 +98,16 @@ body {
   background: #dfd;
   display: block;
 }
-
-#scoreBoard{
-  color: #fff;
+.scores{
+  font-size: 1.2rem;
 }
 
 #scoreBoard h4 {
   text-transform: uppercase;
-  font-size: 1.5rem;
+  font-size: 1rem;
   color: #fff900;
 }
 
-#scoreBoard p {
-  font-size: 1.5rem;
-}
 
 
 .title {
@@ -124,5 +119,5 @@ body {
   padding: 15px 10px;
   margin-inline: auto;
   box-shadow: inset 0px 0px 10px #fff;
-  font-size: 2rem;
+  font-size: 1.1rem;
 }
