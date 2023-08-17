@@ -1,7 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
 
 body {
-  margin: 30px;
   font-family: 'Press Start 2P', cursive;
   line-height: 1.5em;
   color: #fff;
@@ -72,6 +71,9 @@ body {
 
 #cardSlots .content div {
   border-style: dashed;
+  user-select: none;
+  -webkit-user-drag: none;
+  -webkit-user-select: none;
 }
 
 #cardPile .content div {
@@ -92,11 +94,10 @@ body {
   position: absolute;
   left: 0px;
   top: 0px;
-  width: 100vw;
-  height: 100vh;
+  right: 0;
+  bottom: 0;
   z-index: 100;
-  background: #dfd;
-  display: block;
+  background: #09f;
 }
 .scores{
   font-size: 1.2rem;

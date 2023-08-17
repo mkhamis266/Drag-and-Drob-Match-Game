@@ -108,7 +108,7 @@ function init() {
       .attr("id", "card" + medicines[i].mName)
       .appendTo("#cardPile .content")
       .draggable({
-        stack: "#cardPile div",
+        stack: "#cardPile .content div",
         cursor: "move",
         revert: true,
       });
@@ -145,7 +145,7 @@ function handleCardDrop(event, ui) {
   let cardMedicineName = ui.draggable.data("medicine");
 
   // If the card was dropped to the correct slot,
-  // hide the slot and disable it 
+  // hide the slot and disable it
   // then revert the card back to its original position
   // again
 
@@ -162,8 +162,20 @@ function handleCardDrop(event, ui) {
 
   if (correctCards == bactria.length) {
     $("#successMessage").show();
-    $("#successMessage").animate({
-      opacity: 1,
-    },500);
+    $("#successMessage").animate(
+      {
+        opacity: 1,
+      },
+      500
+    );
   }
 }
+
+$(document).bind("ready",function () {
+  $(document).bind("contextmenu", function (e) {
+    e.preventDefault();
+  });
+  $(document).bind("dbClick", function (e) {
+    e.preventDefault();
+  });
+});

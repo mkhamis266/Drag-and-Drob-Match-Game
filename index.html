@@ -1,9 +1,10 @@
-<!DOCTYPE html>
 <html lang="en">
   <head>
+    <title>Drag-and-Drop Game</title>
     <meta charset="UTF-8" />
-    <title>DRAG &amp; DROP</title>
-    <link rel="stylesheet" href="./style.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="css/bootstrap.min.css" />
+    <link rel="stylesheet" href="css/style.css" />
   </head>
   <body>
     <!-- partial:index.partial.html -->
@@ -20,39 +21,34 @@
         <script src="js/jquery.ui.touch-punch.min.js"></script>
       </head>
       <body>
-        <h1 class="text-center mb-3 text-secondary">which Kills What</h1>
-        <div id="container">
-          <div class="row mb-4">
-            <div class="col-lg-3 mb-3 mb-lg-0">
-              <div id="cardPile">
-                <div class="title">Medicines</div>
-                <div class="content"></div>
-                <h5 class="text-center text-white my-3">Scores</h5>
-                <div id="scoreBoard">
-                   <div class="row flex-column">
-                    </div>
-                </div>
-              </div>
-            </div>
-            <div class="col-lg-9">
-              <div id="cardSlots" class="mb-3">
-                <div class="title">Bactria</div>
-                <div class="content"></div>
-              </div>
+        <div id="container" class="container-fluid">
+          <h1 class="text-center my-3 text-secondary">which Kills What</h1>
+      <div class="row mb-4">
+        <div class="col-lg-3 mb-3 mb-lg-0">
+          <div id="cardPile">
+            <div class="title">Medicines</div>
+            <div class="content"></div>
+            <h5 class="text-center text-white my-3">Scores</h5>
+            <div id="scoreBoard">
+              <div class="row flex-column"></div>
             </div>
           </div>
-          <div class="row"></div>
         </div>
-        <div id="successMessage">
-          <div class="container d-flex justify-content-center align-items-center flex-column h-100">
-            <h2>Congratulations!</h2>
-            <button onclick="init()">Play Again</button>
+        <div class="col-lg-9">
+          <div id="cardSlots" class="mb-3">
+            <div class="title">Bactria</div>
+            <div class="content"></div>
           </div>
         </div>
-      </body>
-    </html>
-
+      </div>
+      <div class="row"></div>
+    </div>
+    <div id="successMessage">
+      <div class="container d-flex justify-content-center align-items-center flex-column h-100">
+        <h2>Congratulations!</h2>
+        <button onclick="init()">Play Again</button>
+      </div>
+    </div>
     <script src="js/main.js"></script>
-    <!-- partial -->
   </body>
 </html>
