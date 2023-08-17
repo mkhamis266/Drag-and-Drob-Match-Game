@@ -10,20 +10,9 @@ body {
   user-select: none;
 }
 
-/* Give headings their own font */
-
-h1,
-h2,
-h3,
-h4 {
-  font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
-}
-
 /* Slots for final card positions */
-
 #cardSlots {
   background: navy;
-  flex-wrap: wrap;
 }
 
 /* The initial pile of unsorted cards */
@@ -33,23 +22,33 @@ h4 {
 }
 
 #cardSlots,
-#cardPile,
-#scoreBoard {
-  display: flex;
+#cardPile {
   padding: 0.85em;
   border: 2px solid #333;
   -moz-border-radius: 10px;
   -webkit-border-radius: 10px;
-  border-radius: 10px;
+  border-radius: 15px;
   -moz-box-shadow: 0 0 0.3em rgba(0, 0, 0, 0.8);
   -webkit-box-shadow: 0 0 0.3em rgba(0, 0, 0, 0.8);
   box-shadow: 0 0 0.3em rgba(0, 0, 0, 0.8);
 }
-
+#cardSlots,
+#cardPile {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+#cardSlots .content,
+#cardPile .content {
+  display: flex;
+}
+#cardSlots .content {
+  flex-wrap: wrap;
+}
 /* Individual cards and slots */
 
-#cardSlots div,
-#cardPile div {
+#cardSlots .content div,
+#cardPile .content div {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -71,11 +70,11 @@ h4 {
   background: #aaa;
 }
 
-#cardSlots div {
+#cardSlots .content div {
   border-style: dashed;
 }
 
-#cardPile div {
+#cardPile .content div {
   background: #666;
   color: #fff;
   font-size: 1em;
@@ -92,29 +91,38 @@ h4 {
 /* "You did it!" message */
 #successMessage {
   position: absolute;
-  left: 580px;
-  top: 250px;
-  width: 0;
-  height: 0;
+  left: 0px;
+  top: 0px;
+  width: 100vw;
+  height: 100vh;
   z-index: 100;
   background: #dfd;
-  border: 2px solid #333;
-  -moz-border-radius: 10px;
-  -webkit-border-radius: 10px;
-  border-radius: 10px;
-  -moz-box-shadow: 0.3em 0.3em 0.5em rgba(0, 0, 0, 0.8);
-  -webkit-box-shadow: 0.3em 0.3em 0.5em rgba(0, 0, 0, 0.8);
-  box-shadow: 0.3em 0.3em 0.5em rgba(0, 0, 0, 0.8);
-  padding: 20px;
+  display: block;
+}
+
+#scoreBoard{
+  color: #fff;
 }
 
 #scoreBoard h4 {
   text-transform: uppercase;
-  font-size: 2rem;
+  font-size: 1.5rem;
+  color: #fff900;
 }
 
 #scoreBoard p {
-  text-transform: uppercase;
   font-size: 1.5rem;
 }
 
+
+.title {
+  color: #fff;
+  filter: drop-shadow(0px 0px 10px rgba(255, 255, 255));
+  margin-bottom: 1rem;
+  border: 1px solid #fff;
+  border-radius: 15px;
+  padding: 15px 10px;
+  margin-inline: auto;
+  box-shadow: inset 0px 0px 10px #fff;
+  font-size: 2rem;
+}
